@@ -21,7 +21,7 @@ class Transfer
   end
  end
  def reverse_transaction
-   if valid? @@ receiver.balance > amount && self.status == "complete"
+   if valid? && receiver.balance > amount && self.status == "complete"
      @sender.balance+=amount
      @receiver.balance-=amount
      self.status = "reversed"
